@@ -4,7 +4,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from .models import Measurement, Sensor
-from .serializers import SensorSerializer, MeasurementSerializer
+from .serializers import SensorSerializer, MeasurementSerializer, SensorDetailSerializer
 
 
 class SensorViewSet(ModelViewSet):
@@ -12,7 +12,10 @@ class SensorViewSet(ModelViewSet):
     queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
     
-
+class SensorDetailViewSet(ModelViewSet):
+    """ViewSet для проекта."""
+    queryset = Sensor.objects.all()
+    serializer_class = SensorDetailSerializer
 
 class MeasurementViewSet(ModelViewSet):
     """ViewSet для измерения."""
